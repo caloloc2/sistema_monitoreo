@@ -15,50 +15,81 @@
 
 	<div id="contenido">
 
-		<div class="tanque" style="top: 250px; left: 0px;">
+		<div class="tanque" style="top: 480px; left: 668px; height: 50px; border-radius: 0px;">
 			<div class="contenedor">
-				<div class="agua" style="height: 75px;">
+				<div class="agua" style="height: 100%; border-radius: 0px;">
 					
 				</div>
-			</div>
-			<div class="motores">
-				<div class="tubo_v" style="left: 40px;"></div>
-				<div class="tubo_h" style="left: 29px; width: 10px; top:15px;"></div>
-
-				<div class="tubo_v" style="left: 140px;"></div>
-				<div class="tubo_h" style="left: 129px; width: 10px; top:15px;"></div>
 			</div>
 		</div>
 
-		<div class="tanque" style="top: 150px; left: 400px;">
+		<div class="tanque" style="top: 200px; left: 0px;">
 			<div class="contenedor">
-				<div class="agua" style="height: 185px;">
+				<div class="agua" id="nivel_tanque1">
 					
 				</div>
 			</div>
 			<div class="motores">
-				<div class="tubo_v" style="left: 40px;"></div>
-				<div class="tubo_h" style="left: 29px; width: 10px; top:15px;"></div>
+				<div class="tubo_h" style="left: 40px; width: 250px; top:50px;"></div>
 
-				<div class="tubo_v" style="left: 140px;"></div>
-				<div class="tubo_h" style="left: 129px; width: 10px; top:15px;"></div>
+				<div class="tubo_v" style="left: 40px;  border-bottom: 1px solid #000;"></div>
+				<div class="tubo_h" style="left: 29px; width: 10px; top:15px;" id="tanque1_motor1"></div>
+
+				<div class="tubo_v" style="left: 140px;  border-bottom: 1px solid #000;"></div>
+				<div class="tubo_h" style="left: 129px; width: 10px; top:15px;" id="tanque1_motor2"></div>
+				
+				<div class="tubo_v" style="left: 270px; border-bottom: 1px solid #000; height: 235px; top: -185px;"></div>
+				<div class="tubo_h" style="left: 290px; width: 250px; top:-185px; border-left: 1px solid #000;"></div>
+
+				<div class="tubo_v" style="left: -60px; height: 250px; top: -115px;"></div>
+				<div class="tubo_h" style="left: -40px; width: 38px; top:-115px; border-left: 1px solid #000;"></div>
+				<div class="tubo_v" style="left: 760px; height: 80px; top: 115px;"></div>
+				<div class="tubo_h" style="left: -40px; width: 800px; top:115px; border-left: 1px solid #000; border-right: 1px solid #000;"></div>
+				
+			</div>			
+		</div>
+
+		<div class="tanque" style="top: 130px; left: 400px;">
+			<div class="contenedor">
+				<div class="agua" id="nivel_tanque2">
+					
+				</div>
+			</div>
+			<div class="motores">
+				<div class="tubo_h" style="left: 40px; width: 250px; top:50px;"></div>
+
+				<div class="tubo_v" style="left: 40px; border-bottom: 1px solid #000;"></div>
+				<div class="tubo_h" style="left: 29px; width: 10px; top:15px;" id="tanque2_motor1"></div>
+
+				<div class="tubo_v" style="left: 140px; border-bottom: 1px solid #000;"></div>
+				<div class="tubo_h" style="left: 129px; width: 10px; top:15px;" id="tanque2_motor2"></div>
+
+				<div class="tubo_v" style="left: 270px; border-bottom: 1px solid #000; height: 235px; top: -185px;"></div>
+				<div class="tubo_h" style="left: 290px; width: 250px; top:-185px; border-left: 1px solid #000;"></div>
 			</div>
 		</div>
 
-		<div class="tanque" style="top: 50px; left: 800px;">
+		<div class="tanque" style="top: 60px; left: 800px;">
 			<div class="contenedor">
-				<div class="agua" style="height: 10px;">
+				<div class="agua" id="nivel_tanque3">
 					
 				</div>
 			</div>
 			<div class="motores">
-				<div class="tubo_v" style="left: 40px;"></div>
-				<div class="tubo_v" style="left: 140px;"></div>				
+				<div class="tubo_h" style="left: 40px; width: 200px; top:50px;"></div>
+
+				<div class="tubo_v" style="left: 40px; border-bottom: 1px solid #000;"></div>
+				<div class="tubo_v" style="left: 140px; border-bottom: 1px solid #000;"></div>				
 			</div>
 		</div>
 
 	</div>
 
 	<figure id="logo"><img src="img/logo.png" alt=""></figure>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        
+    <script src="js/main.js"></script>
 </body>
 </html>
