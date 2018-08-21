@@ -112,15 +112,15 @@ class Meta
      * @param $edad         nueva descripcion 
      * @return PDOStatement
      */
-    public static function Nuevo_Dato($tanque1_motor1, $tanque1_motor2, $tanque1_nivel, $tanque2_motor1, $tanque2_motor2, $tanque2_nivel, $tanque3_nivel)
+    public static function Nuevo_Dato($tanque1_motor1, $tanque1_motor2, $tanque1_nivel, $tanque2_motor1, $tanque2_motor2, $tanque2_nivel, $tanque3_nivel, $pozo_motor)
     {        
         // Sentencia INSERT
-        $comando = "INSERT INTO tanques (tanque1_motor1, tanque1_motor2, tanque1_nivel, tanque2_motor1, tanque2_motor2, tanque2_nivel, tanque3_nivel) VALUES (?,?,?,?,?,?,?)";
+        $comando = "INSERT INTO tanques (tanque1_motor1, tanque1_motor2, tanque1_nivel, tanque2_motor1, tanque2_motor2, tanque2_nivel, tanque3_nivel, pozo_motor) VALUES (?,?,?,?,?,?,?,?)";
 
         // Preparar la sentencia
         $sentencia = Database::getInstance()->getDb()->prepare($comando);
 
-        return $sentencia->execute(array($tanque1_motor1, $tanque1_motor2, $tanque1_nivel, $tanque2_motor1, $tanque2_motor2, $tanque2_nivel, $tanque3_nivel));
+        return $sentencia->execute(array($tanque1_motor1, $tanque1_motor2, $tanque1_nivel, $tanque2_motor1, $tanque2_motor2, $tanque2_nivel, $tanque3_nivel, $pozo_motor));
 
     }
 }

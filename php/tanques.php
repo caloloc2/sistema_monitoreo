@@ -15,6 +15,7 @@ try{
 		$respuesta['tanque2']['motor2'] = $consulta['tanque2_motor2'];
 		$respuesta['tanque2']['nivel'] = $consulta['tanque2_nivel'];
 		$respuesta['tanque3']['nivel'] = $consulta['tanque3_nivel'];
+		$respuesta['pozo']['motor'] = $consulta['pozo_motor'];
 
 		$respuesta['estado'] = true;
 	}

@@ -8,14 +8,86 @@
 a 
 	text-decoration none
 
+.salir 
+	position fixed
+	color #cecece
+	font-size 15px
+	top 20px
+	right 30px
+	transition all 0.3s linear
+
+.salir:hover
+	color white
+
 body
 	background #333
+	
+	header
+		border-bottom 1px solid rgba(0,0,0,0.1)
+		padding  1em 3em 0.2em 3em
+		
+		h1, a, figure
+			display inline-block
+			vertical-align middle
+			padding 0
+			
+		a 
+			float right
+			font-size 20px
+			padding 0.5em 0 0 0
+			text-transform uppercase
+			transition all 0.3s linear
+			text-decoration none
+		
+		a:hover
+			color #777
+		
+		figure
+			width 120px 
+			margin 0 2em 0.6em 0
+			
+			img 
+				width 100%
 	
 	h1 
 		font-size 40px
 		color white
 		text-align center
 		padding 0.5em 0
+	
+	#login
+		text-align center
+		border 0
+		
+		h1, a, figure
+			display block
+		
+		figure
+			margin 0 auto
+			width 250px
+		
+		h1 
+			font-size 25px
+			padding 1em 0 0 0
+	
+	#inicio
+		width 300px
+		margin 4em auto 0 auto
+		padding 1em 2em
+		
+		input
+			display block 
+			width 100%
+			padding 0.5em 0.7em
+			border-radius 0.3em
+			border 1px solid rgba(0,0,0,0.3)
+			margin 0 0 0.5em 0
+			background white
+		
+		input[type='submit']
+			color #0000AA
+			text-transform uppercase
+			width 106.5%
 	
 	#contenido
 		width 1000px

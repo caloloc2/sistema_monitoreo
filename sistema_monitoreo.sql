@@ -28,5 +28,6 @@ CREATE TABLE `tanques` (
   `tanque2_motor2` int(11) DEFAULT '0',
   `tanque2_nivel` double DEFAULT '0',
   `tanque3_nivel` double DEFAULT '0',
+  `pozo_motor` int(11) DEFAULT '0',
   PRIMARY KEY (`id_datos`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
