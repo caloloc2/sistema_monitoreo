@@ -125,23 +125,73 @@ function Niveles(tanque1, tanque2, tanque3){
 	$('#nivel_tanque3').css({
 		'height': tanque3+'%'
 	});
+
+	if (tanque3>0){
+		$('.tanque:nth-child(4) > .motores > div:nth-child(1)').addClass('fluido');
+		$('.tanque:nth-child(4) > .motores > div:nth-child(2)').addClass('fluido');
+		$('.tanque:nth-child(4) > .motores > div:nth-child(3)').addClass('fluido');
+		$('.tanque:nth-child(4) > .motores > div:nth-child(4)').addClass('fluido');
+	}else{
+		$('.tanque:nth-child(4) > .motores > div:nth-child(1)').removeClass('fluido');
+		$('.tanque:nth-child(4) > .motores > div:nth-child(2)').removeClass('fluido');
+		$('.tanque:nth-child(4) > .motores > div:nth-child(3)').removeClass('fluido');
+		$('.tanque:nth-child(4) > .motores > div:nth-child(4)').removeClass('fluido');
+	}
 }
 
 function Motores(tanque1_motor1, tanque1_motor2, tanque2_motor1, tanque2_motor2, pozo_motor){
 	$('.tubo_h').removeClass('activo');
+	for (x=9; x<=12; x++){
+		$('.tanque:nth-child(2) > .motores > div:nth-child('+x+')').removeClass('fluido');
+	}
+	$('.tanque:nth-child(2) > .motores > div:nth-child(1)').removeClass('fluido');
+	$('.tanque:nth-child(2) > .motores > div:nth-child(2)').removeClass('fluido');
+	$('.tanque:nth-child(2) > .motores > div:nth-child(3)').removeClass('fluido');
+	$('.tanque:nth-child(2) > .motores > div:nth-child(5)').removeClass('fluido');
+	$('.tanque:nth-child(2) > .motores > div:nth-child(7)').removeClass('fluido');
+	$('.tanque:nth-child(2) > .motores > div:nth-child(8)').removeClass('fluido');
+
+	$('.tanque:nth-child(3) > .motores > div:nth-child(1)').removeClass('fluido');
+	$('.tanque:nth-child(3) > .motores > div:nth-child(2)').removeClass('fluido');
+	$('.tanque:nth-child(3) > .motores > div:nth-child(3)').removeClass('fluido');
+	$('.tanque:nth-child(3) > .motores > div:nth-child(5)').removeClass('fluido');
+	$('.tanque:nth-child(3) > .motores > div:nth-child(7)').removeClass('fluido');
+	$('.tanque:nth-child(3) > .motores > div:nth-child(8)').removeClass('fluido');
+
 	if (tanque1_motor1==1){
 		$('#tanque1_motor1').addClass('activo');
+		$('.tanque:nth-child(2) > .motores > div:nth-child(1)').addClass('fluido');
+		$('.tanque:nth-child(2) > .motores > div:nth-child(2)').addClass('fluido');
+		$('.tanque:nth-child(2) > .motores > div:nth-child(3)').addClass('fluido');
+		$('.tanque:nth-child(2) > .motores > div:nth-child(7)').addClass('fluido');
+		$('.tanque:nth-child(2) > .motores > div:nth-child(8)').addClass('fluido');
 	}
 	if (tanque1_motor2==1){
-		$('#tanque1_motor2').addClass('activo');
+		$('#tanque1_motor2').addClass('activo');				
+		$('.tanque:nth-child(2) > .motores > div:nth-child(2)').addClass('fluido');
+		$('.tanque:nth-child(2) > .motores > div:nth-child(5)').addClass('fluido');
+		$('.tanque:nth-child(2) > .motores > div:nth-child(7)').addClass('fluido');
+		$('.tanque:nth-child(2) > .motores > div:nth-child(8)').addClass('fluido');
 	}
 	if (tanque2_motor1==1){
 		$('#tanque2_motor1').addClass('activo');
+		$('.tanque:nth-child(3) > .motores > div:nth-child(1)').addClass('fluido');
+		$('.tanque:nth-child(3) > .motores > div:nth-child(2)').addClass('fluido');
+		$('.tanque:nth-child(3) > .motores > div:nth-child(3)').addClass('fluido');
+		$('.tanque:nth-child(3) > .motores > div:nth-child(7)').addClass('fluido');
+		$('.tanque:nth-child(3) > .motores > div:nth-child(8)').addClass('fluido');
 	}
 	if (tanque2_motor2==1){
 		$('#tanque2_motor2').addClass('activo');
+		$('.tanque:nth-child(3) > .motores > div:nth-child(2)').addClass('fluido');
+		$('.tanque:nth-child(3) > .motores > div:nth-child(5)').addClass('fluido');
+		$('.tanque:nth-child(3) > .motores > div:nth-child(7)').addClass('fluido');
+		$('.tanque:nth-child(3) > .motores > div:nth-child(8)').addClass('fluido');
 	}
 	if (pozo_motor==1){
 		$('#pozo_motor').addClass('activo');
-	}	
+		for (x=9; x<=12; x++){
+		$('.tanque:nth-child(2) > .motores > div:nth-child('+x+')').addClass('fluido');	
+	}
+	}
 }
