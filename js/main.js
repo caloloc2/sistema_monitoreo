@@ -110,6 +110,10 @@ function Tanques(){
 }
 
 function Niveles(tanque1, tanque2, tanque3){
+	$('#nivel_tanque1_texto').html(tanque1+'%');
+	$('#nivel_tanque2_texto').html(tanque2+'%');
+	$('#nivel_tanque3_texto').html(tanque3+'%');
+	
 	$('#nivel_tanque1').css({
 		'height': tanque1+'%'
 	});
