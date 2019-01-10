@@ -67,7 +67,7 @@ function Verifica_Inicio(){
 			//console.log(datos);
 			if (!datos['estado']){
 				window.location.href = 'login.html';
-			}else{
+			}else{				
 				setInterval(function(){
 					Tanques();
 				}, 1000)
@@ -194,4 +194,89 @@ function Motores(tanque1_motor1, tanque1_motor2, tanque2_motor1, tanque2_motor2,
 		$('.tanque:nth-child(2) > .motores > div:nth-child('+x+')').addClass('fluido');	
 	}
 	}
+}
+
+
+function Reporte(){
+	document.getElementById('fecha_inicio').value = Fecha();
+	document.getElementById('fecha_final').value = Fecha();
+	$('#grafico').fadeIn(250);
+}
+
+$('#cerrar_grafico').click(function(){
+	$('#grafico').fadeOut(250);
+	return false;
+})
+
+$('#buscador').submit(function(){
+	Graficador();
+	return false;
+})
+
+function Graficador(){
+	$.ajax({
+		url: 'php/valores_grafica.php',
+		data:{
+			fecha_inicio: document.getElementById('fecha_inicio').value,
+			fecha_final: document.getElementById('fecha_final').value,
+			tanque: document.getElementById('selector_tanque').value
+		},
+		type: 'POST',
+		dataType: 'json',		
+		success: function(datos) {
+			console.log(datos);
+			if (datos['estado']){
+				Mostrar_Grafica(datos['fechas'], datos['valores']);
+			}			
+		},
+		error:function(e){
+			console.log(e.responseText);
+		}
+	});
+}
+
+
+function Mostrar_Grafica(fechas, valores){	
+	Highcharts.chart('highchart', {
+		chart: {
+			type: 'line'
+		},
+		title: {
+			text: 'Registros de Niveles en Tanque'
+		},
+		subtitle: {
+			text: 'Universidad Tecnológica Israel'
+		},
+		xAxis: {
+			categories: fechas
+		},
+		yAxis: {
+			title: {
+				text: 'Nivel del Tanque'
+			}
+		},
+		plotOptions: {
+			line: {
+				dataLabels: {
+					enabled: true
+				},
+				enableMouseTracking: false
+			}
+		},
+		series: [{
+			name: 'Nivel del Tanque',
+			data: valores
+		}]
+	});
+}
+
+function Fecha(){
+	// funcion para obtener fecha para los campos inicio y final
+	var f = new Date();
+	var anio = f.getFullYear();
+	var mes = ('0' + (f.getMonth()+1)).slice(-2);
+	var dia = ('0' + f.getDate()).slice(-2);
+	var fecha = anio+"-"+mes+"-"+dia;
+
+	return fecha;
 }

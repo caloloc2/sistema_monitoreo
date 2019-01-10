@@ -12,7 +12,12 @@
 <body>
 	
 	<h1>Sistema de Monitoreo</h1>
-	<a href="#" class="salir" onclick="Salir(); return false;">Salir</a>
+	
+	<ul class="salir">
+		<li><a href="#" onclick="Reporte(); return false;">Reporte</a></li>
+		<li><a href="#" onclick="Salir(); return false;">Salir</a></li>
+	</ul>
+	
 
 	<div id="contenido">
 
@@ -123,12 +128,33 @@
 
 	</div>
 
+	<div id="grafico">
+		<div class="contenedor">
+			<form id="buscador">
+				<input type="date" id="fecha_inicio">
+				<input type="date" id="fecha_final">
+				<select name="selector_tanque" id="selector_tanque">
+					<option value="1">Tanque 1</option>
+					<option value="2">Tanque 2</option>
+					<option value="3">Tanque 3</option>
+				</select>
+				<input type="submit" value="Buscar">
+				<button id="cerrar_grafico">Cerrar</button>
+			</form>
+
+			<div class="contenedor_grafico">
+				<div id="highchart"></div>
+			</div>
+		</div>
+	</div>
+
 	<figure id="logo"><img src="img/logo.png" alt=""></figure>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         
-    <script src="js/main.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/highcharts.js"></script>
 
     <script>
     	$(document).ready(function(){

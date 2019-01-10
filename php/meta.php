@@ -123,6 +123,26 @@ class Meta
         return $sentencia->execute(array($tanque1_motor1, $tanque1_motor2, $tanque1_nivel, $tanque2_motor1, $tanque2_motor2, $tanque2_nivel, $tanque3_nivel, $pozo_motor));
 
     }
+
+    /**
+     * Insertar una nueva meta
+     *
+     * @param $id_test      identificador
+     * @param $nombre       nuevo titulo
+     * @param $edad         nueva descripcion 
+     * @return PDOStatement
+     */
+    public static function Nuevo_Registro($id_tanque, $fecha, $hora, $nivel)
+    {        
+        // Sentencia INSERT
+        $comando = "INSERT INTO registros (id_tanque, fecha, hora, nivel) VALUES (?,?,?,?)";
+
+        // Preparar la sentencia
+        $sentencia = Database::getInstance()->getDb()->prepare($comando);
+
+        return $sentencia->execute(array($id_tanque, $fecha, $hora, $nivel));
+
+    }
 }
 
 ?>

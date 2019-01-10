@@ -2,6 +2,9 @@
 
 try{
 	require 'meta.php';
+	
+	$fecha = date('Y-m-d');
+	$hora = date("H:i:s");
 
 	$id = 0;
 	$verifica = Meta::Consulta_Unico("SELECT * FROM tanques LIMIT 1");
@@ -15,6 +18,8 @@ try{
 		$actualiza = Meta::Actualizar_Campo('tanques', 'tanque1_motor1', $_GET['t1m1'], 'id_datos', $id);
 		$actualiza = Meta::Actualizar_Campo('tanques', 'tanque1_motor2', $_GET['t1m2'], 'id_datos', $id);
 		$actualiza = Meta::Actualizar_Campo('tanques', 'tanque1_nivel', $_GET['t1n'], 'id_datos', $id);
+
+		$nuevo_registro = Meta:: Nuevo_Registro(1, $fecha, $hora, $_GET['t1n']);
 		echo 'ok<br>';
 	}else{
 		echo 'Debe ingresar todos los datos (estado motores, nivel) del tanque 1.<br>';
@@ -24,6 +29,8 @@ try{
 		$actualiza = Meta::Actualizar_Campo('tanques', 'tanque2_motor1', $_GET['t2m1'], 'id_datos', $id);
 		$actualiza = Meta::Actualizar_Campo('tanques', 'tanque2_motor2', $_GET['t2m2'], 'id_datos', $id);
 		$actualiza = Meta::Actualizar_Campo('tanques', 'tanque2_nivel', $_GET['t2n'], 'id_datos', $id);
+
+		$nuevo_registro = Meta:: Nuevo_Registro(2, $fecha, $hora, $_GET['t2n']);
 		echo 'ok<br>';
 	}else{
 		echo 'Debe ingresar todos los datos (estado motores, nivel) del tanque 2.<br>';
@@ -31,6 +38,8 @@ try{
 
 	if (isset($_GET['t3n'])){		
 		$actualiza = Meta::Actualizar_Campo('tanques', 'tanque3_nivel', $_GET['t3n'], 'id_datos', $id);
+
+		$nuevo_registro = Meta:: Nuevo_Registro(3, $fecha, $hora, $_GET['t3n']);
 		echo 'ok<br>';
 	}else{
 		echo 'Debe ingresar el nivel del tanque 3.<br>';
